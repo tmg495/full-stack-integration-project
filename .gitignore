@@ -1,5 +1,2 @@
-react-blog-backend/api-gateway/node_modules/*
-react-blog-backend/auth-service/node_modules/*
-react-blog-backend/blog-service/node_modules/*
-react-blog-frontend/node_modules/*
-step-by-step-guides/*
+**/node_modules
+step-by-step-guides/**
