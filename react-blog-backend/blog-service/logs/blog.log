@@ -7426,3 +7426,4 @@
 {"level":30,"time":1768331016436,"pid":2527,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/posts?page=1&results_per_page=5 - Request received"}
 {"level":30,"time":1768331016437,"pid":2527,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
 {"level":30,"time":1768331016437,"pid":2527,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768336580010,"pid":2527,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/posts/696697037946a31f18181fef - Request received"}

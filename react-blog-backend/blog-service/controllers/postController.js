@@ -109,13 +109,56 @@ exports.createPost = async (req, res) => {
 };
 
 exports.updatePost = async (req, res) => {
-  const { tags, categories, title, content } = req.body;
+  const { tags, categories, title, content, author } = req.body;
 
   const oldPost = await Post.findById(req.params.id)
       .populate("author tags categories comments");
   
   if (!oldPost) {
     return res.status(404).json({ message: "Post not found" });
+  }
+  if (req.user.id != oldPost.author) {
+    return res.status(403).json({ message: "User is not author"});
+  }
+  try {
+    const tagIds = await createOrGetTags(tags);
+    const categoryIds = await createOrGetCategories(categories);
+  
+    const updatedData = {
+      title: !title ? oldPost.title : title,
+      content: !content ? oldPost.content : content,
+      tags: !tags ? oldPost.tags : tagIds,
+      categories: !categories ? oldPost.categories : categoryIds
+    };
+  
+    const updatedPost = Post.findByIdAndUpdate(updatedData);
+  
+    res.status(201).json({ message: "Post created successfully", updatedPost });
+  } catch (error) {
+    res.status(500).json({ message: "Failed to update post", error: error.message });
+  }
+}
+
+exports.deletePost = async (req, res) => {
+  const post = await Post.findById(req.params.id);
+
+  if (!post) {
+    return res.status(404).json({ message: "Post not found" });
+  }
+  if (req.user.id != post.author) {
+    return res.status(403).json({ message: "User is not author"});
+  }
+
+  try {
+    Like.deleteMany(post)
+    Comment.deleteMany(post)
+    post.deleteOne()
+    cleanUpTags()
+    cleanUpCategories()
+
+    res.status(201).json({ message: "Post deleted"});
+  } catch (error) {
+    res.status(500).json({ message: "Failed to delete post", error: error.message });
   }
 }
 
