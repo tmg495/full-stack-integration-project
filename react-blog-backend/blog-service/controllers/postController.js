@@ -121,9 +121,15 @@ exports.updatePost = async (req, res) => {
     return res.status(403).json({ message: "User is not author"});
   }
   try {
-    const tagIds = await createOrGetTags(tags);
-    const categoryIds = await createOrGetCategories(categories);
-  
+    let tagIds;
+    let categoryIds;
+    if (tags){
+      tagIds = await createOrGetTags(tags);
+    }
+    if (categories) {
+      categoryIds = await createOrGetCategories(categories);
+    }
+
     const updatedData = {
       title: !title ? oldPost.title : title,
       content: !content ? oldPost.content : content,
@@ -131,10 +137,11 @@ exports.updatePost = async (req, res) => {
       categories: !categories ? oldPost.categories : categoryIds
     };
   
-    const updatedPost = Post.findByIdAndUpdate(updatedData);
+    const updatedPost = await Post.findByIdAndUpdate(req.params.id, updatedData, { new: true });
   
-    res.status(201).json({ message: "Post created successfully", updatedPost });
+    res.status(201).json({ message: "Post updated successfully", post: updatedPost });
   } catch (error) {
+    console.error("Error during update:", error)
     res.status(500).json({ message: "Failed to update post", error: error.message });
   }
 }

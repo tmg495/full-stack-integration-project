@@ -3,6 +3,8 @@ const {
   getPosts,
   getPostById,
   createPost,
+  updatePost,
+  deletePost
 } = require("../controllers/postController");
 const { protect } = require("../middleware/authMiddleware");
 
@@ -16,6 +18,8 @@ router.get("/:id", protect, getPostById); // GET /api/posts/:id
 
 // Create a new post
 router.post("/", protect, createPost); // POST /api/posts
+
+router.patch("/:id", protect, updatePost);
 
 // TODO
 // Import functions implemented in postController.js that are associated with update and delete post functionalities
