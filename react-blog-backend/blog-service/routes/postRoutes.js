@@ -21,6 +21,8 @@ router.post("/", protect, createPost); // POST /api/posts
 
 router.patch("/:id", protect, updatePost);
 
+router.delete("/:id", protect, deletePost)
+
 // TODO
 // Import functions implemented in postController.js that are associated with update and delete post functionalities
 // Add routes for Update and Delete functionalities

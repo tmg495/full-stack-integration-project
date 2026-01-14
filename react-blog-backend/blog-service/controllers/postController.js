@@ -157,11 +157,11 @@ exports.deletePost = async (req, res) => {
   }
 
   try {
-    Like.deleteMany(post)
-    Comment.deleteMany(post)
-    post.deleteOne()
-    cleanUpTags()
-    cleanUpCategories()
+    await Like.deleteMany({post: req.params.id})
+    await Comment.deleteMany({post: req.params.id})
+    await post.deleteOne()
+    await cleanUpTags()
+    await cleanUpCategories()
 
     res.status(201).json({ message: "Post deleted"});
   } catch (error) {
