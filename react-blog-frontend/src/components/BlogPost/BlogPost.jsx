@@ -37,63 +37,42 @@ function BlogPost({
 
   // Function to handle deleting a post
   const handleDelete = async () => {
-    // TODO
-    // 1. Retrieve User Authentication Information
-          // Objective: Access the currently logged-in user's authentication details.
-          // Steps:
-                // Use localStorage.getItem("auth_user") to retrieve the stored user information.
-                // Parse the JSON string into an object using JSON.parse().
-                // Extract the token for authentication and currentUserId to identify the user.
-    
-    // 2. Check for User Authentication
-          // Objective: Ensure the user is logged in before proceeding.
-          // Steps:
-                // Verify that the token exists.
-                // If the token is missing, display an alert message:
-                // "Authentication token not found. Please log in."
-                // Terminate further execution by returning early.
-    
-    // 3. Verify User Authorization
-          // Objective: Allow only the author of the post to delete it.
-          // Steps:
-                // Compare the author of the post with currentUserId.
-                // If they do not match, display an alert message:
-                // "You are restricted to delete this post, as you are not the owner."
-                // Prevent unauthorized deletion by returning early.
-    
-    // 4. Send DELETE Request
-          // Objective: Communicate with the API to delete the post.
-          // Steps:
-                // Construct the API URL using the post ID:
-                // ${import.meta.env.VITE_API_URL}/api/posts/${id}.
-                // Use the fetch API to send a DELETE request:
-                // Include the Authorization header with the token.
-                // Specify the HTTP method as DELETE.
-                // Await the response from the server.
-    
-    // 5. Handle API Response
-          // Objective: Check if the post was deleted successfully.
-          // Steps:
-                // Use response.ok to verify the response status.
-                // If the response is not successful:
-                // Throw a new error with the message:
-                // "Failed to delete the post. Please try again."
-                // Display an alert message on success:
-                // "Post deleted successfully!"
-    
-    // 6. Redirect to Home Page
-          // Objective: Navigate to the home page after the post is deleted.
-          // Steps:
-                // Use the navigate("/") function to redirect the user to the home page.
-                // Ensure this step occurs only after successful deletion.
-    
-    // 7. Handle Errors
-          // Objective: Gracefully handle any errors during the process.
-          // Steps:
-                // Use a try...catch block to wrap the logic.
-                // In the catch block:
-                // Display the error message using alert().
-                // Log the error for debugging purposes, if necessary.
+    try {
+      const userInfo = localStorage.getItem("auth_user")
+      const { token, currentUserId } = JSON.parse(userInfo)
+      
+      if (!token) {
+        alert("Authentication token not found. Please log in.");
+        return;
+      }
+  
+      if (author != currentUserId){
+        alert("You are restricted to delete this post, as you are not the owner.")
+        return;
+      }
+  
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/posts/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          },
+        }
+      );
+  
+      if (!response.ok) {
+        throw new Error("Failed to delete.");
+      } else {
+        alert("Post deleted successfully!")
+        navigate("/")
+      }
+    } catch (error) {
+      console.error(error)
+      alert("Deletion failed")
+    }
   };
 
   const displayContent = isExpanded
