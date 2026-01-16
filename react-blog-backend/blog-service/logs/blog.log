@@ -7778,3 +7778,150 @@
 {"level":30,"time":1768512474047,"pid":2683,"hostname":"DESKTOP-VJHISJB","msg":"Tags processed successfully"}
 {"level":30,"time":1768512474179,"pid":2683,"hostname":"DESKTOP-VJHISJB","msg":"Categories processed successfully"}
 {"level":30,"time":1768512474217,"pid":2683,"hostname":"DESKTOP-VJHISJB","msg":"Post created successfully"}
+{"level":30,"time":1768520685848,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768520686327,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768520718467,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/posts - Request received"}
+{"level":30,"time":1768520718469,"pid":36158,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768520718469,"pid":36158,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768520754886,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4 - Request received"}
+{"level":30,"time":1768520846652,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/posts/comments/69695bda014fd1c0da4c23d4 - Request received"}
+{"level":30,"time":1768521247927,"pid":36158,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/posts/69695bda014fd1c0da4c23d4/comments - Request received"}
+{"level":30,"time":1768522091881,"pid":40955,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768522092309,"pid":40955,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768522108956,"pid":40955,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522108957,"pid":40955,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522108959,"pid":40955,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522108959,"pid":40955,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522272872,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768522273311,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768522276694,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522276694,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522276697,"pid":41629,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522276697,"pid":41629,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522373714,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"POST /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522373714,"pid":41629,"hostname":"DESKTOP-VJHISJB","msg":"POST /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522373715,"pid":41629,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522373715,"pid":41629,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522470630,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768522471128,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768522474447,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"POST /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522474447,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"POST /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522474450,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522474450,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522517871,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"POST /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522517871,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"POST /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522517872,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522517872,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522589551,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/posts/69695bda014fd1c0da4c23d4 - Request received"}
+{"level":30,"time":1768522589552,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522589552,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522634605,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522634605,"pid":42386,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522634606,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522634606,"pid":42386,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522827936,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768522828464,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768522830392,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768522830392,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768522830395,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768522830395,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523079231,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"POST /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523079231,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"POST /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523079232,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523079232,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523217933,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523217934,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523217934,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523217934,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523226688,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523226688,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523226689,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523226689,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523299650,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523299650,"pid":43787,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523299650,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523299650,"pid":43787,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523341822,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768523342313,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768523356513,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523356513,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523356516,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523356516,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523610706,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523610706,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523610707,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523610707,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523633956,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867/ - Request received"}
+{"level":30,"time":1768523633956,"pid":45564,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867/ - Request Received"}
+{"level":30,"time":1768523633957,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523633957,"pid":45564,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523678467,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768523679072,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768523680793,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867/ - Request received"}
+{"level":30,"time":1768523680794,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867/ - Request Received"}
+{"level":30,"time":1768523680796,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523680796,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523704291,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523704291,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523704292,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523704292,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523715664,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523715664,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523715665,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523715665,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523742138,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"POST /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523742138,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"POST /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523742139,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523742139,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523746589,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523746589,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523746590,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523746590,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523749460,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523749460,"pid":46818,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523749461,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523749461,"pid":46818,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523772607,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768523773029,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768523775800,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523775801,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523775803,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523775803,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523788336,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523788336,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523788337,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523788337,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523810209,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/69698315d34ada131f57a867/ - Request received"}
+{"level":30,"time":1768523810209,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /69698315d34ada131f57a867/ - Request Received"}
+{"level":30,"time":1768523810210,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523810210,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523813893,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523813893,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523813894,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523813894,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523931622,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523931622,"pid":47361,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523931622,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523931623,"pid":47361,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523948881,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"Blog Service running on port 5002"}
+{"level":30,"time":1768523949385,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"Connected to MongoDB"}
+{"level":30,"time":1768523951530,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/69698315d34ada131f57a867 - Request received"}
+{"level":30,"time":1768523951530,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"PUT /69698315d34ada131f57a867 - Request Received"}
+{"level":30,"time":1768523951532,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523951532,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523982968,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"PUT /api/comments/696987de13a95d4025c32807 - Request received"}
+{"level":30,"time":1768523982968,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"PUT /696987de13a95d4025c32807 - Request Received"}
+{"level":30,"time":1768523982969,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523982969,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523992819,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768523992819,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768523992820,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768523992820,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768524001712,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /api/comments/696987de13a95d4025c32807/ - Request received"}
+{"level":30,"time":1768524001712,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"DELETE /696987de13a95d4025c32807/ - Request Received"}
+{"level":30,"time":1768524001713,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768524001713,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768524005546,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"GET /api/comments/69695bda014fd1c0da4c23d4/ - Request received"}
+{"level":30,"time":1768524005546,"pid":48161,"hostname":"DESKTOP-VJHISJB","msg":"GET /69695bda014fd1c0da4c23d4/ - Request Received"}
+{"level":30,"time":1768524005547,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"Token verification successful","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
+{"level":30,"time":1768524005547,"pid":48161,"hostname":"DESKTOP-VJHISJB","message":"User authenticated successfully","userId":"696696a3e33b48987adf0b3d","email":"thetomgrant@gmail.com"}
