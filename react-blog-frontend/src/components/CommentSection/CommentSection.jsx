@@ -54,7 +54,9 @@ function CommentSection({ postId }) {
     try {
       e.preventDefault()
       const userInfo = localStorage.getItem("auth_user")
-      const { token, currentUserId } = JSON.parse(userInfo)
+      
+      const { token, id: currentUserId } = JSON.parse(userInfo)
+      
       if (!token) {
         alert("Authentication token not found. Please log in.");
         return;
@@ -99,10 +101,15 @@ function CommentSection({ postId }) {
     try {
       e.preventDefault()
       const userInfo = localStorage.getItem("auth_user")
-      const { token, currentUserId } = JSON.parse(userInfo)
+      const { token, id: currentUserId } = JSON.parse(userInfo)
 
       if (!token) {
         alert("Authentication token not found. Please log in.");
+        return;
+      }
+      
+      if (currentUserId != editComment.author) {
+        alert("Can't edit comments by other users.");
         return;
       }
       
@@ -144,14 +151,36 @@ function CommentSection({ postId }) {
 
   // Function to handle deleting a comment
   const handleDeleteComment = async (commentId, commentAuthorId) => {
-    // TODO
-            // Access the authentication token and current user ID from localStorage.
-            // Ensure that the user is authorized to delete the comment (e.g., they are the author or the post owner).
-            // Use the comment's ID to construct the API URL.
-            // Send a DELETE request to the API with the token in the Authorization header.
-            // If successful, remove the deleted comment from the comments state to update the UI.
-            // Handle any errors, providing meaningful feedback to the user.
+    try {
+      const userInfo = localStorage.getItem("auth_user")
+      const { token, id: currentUserId } = JSON.parse(userInfo)
 
+      if (!token) {
+        alert("Authentication token not found. Please log in.");
+        return;
+      }
+      if (currentUserId != commentAuthorId) {
+        alert("Can't delete comments by other users.");
+        return;
+      }
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/comments/${commentId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          }
+        }
+      );
+      const newCommentArray = comments.filter((c) => c._id != commentId)
+      setComments(newCommentArray)
+
+    } catch (error) {
+      console.error(error)
+    }
 
   };
 
