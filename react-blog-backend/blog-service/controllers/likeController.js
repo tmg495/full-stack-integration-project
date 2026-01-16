@@ -1,50 +1,70 @@
-// TODO
-// 1. Setup and Imports
-      // Objective: Import necessary modules and models.
-      // Steps:
-            // Import the Like model to interact with the likes collection:
-            // Import the Post model to interact with the posts collection:
+const Like = require("../models/Like")
+const Post = require("../models/Posts")
 
-  // 2. Implement the addLike Function
-      // Function Name: addLike
-      // Objective: Add a like to a specific post by the current user.
-      // Steps:
-            // Use Post.findById(req.params.id) to check if the post exists.
-            // Return a 404 Not Found error if the post does not exist.
-            // Use Like.findOne() to check if the user has already liked the post.
-            // Return a 400 Bad Request error if a like already exists for this user and post.
-            // Create a new Like document with the user (from req.user.id) and post (from req.params.id).
-            // Save the Like document using like.save().
-            // Update the post:
-            // Add the like._id to the post.likes array.
-            // Save the updated post using post.save().
-            // Respond with a 201 Created status and the created like.
+exports.addLike = async (req, res) => {
+      try {
+            const post = await Post.findById(req.params.id)
+            if (!post) {
+                  console.error("404 - No such post exists.")
+                  return res.status(404).json({message: "No such post exists."})
+            }
+            const hasLiked = await Like.findOne({
+                  user: req.user.id,
+                  post: req.params.id
+            })
+            if (hasLiked) {
+                  console.error("400 - Post already liked.")
+                  return res.status(400).json({message: "Post already liked."})
+            }
+            const newLike = new Like({
+                  user: req.user.id,
+                  post: req.params.id
+            })
+            await newLike.save()
+            post.likes.push(newLike._id)
+            await post.save()
+            return res.status(201).json({message: "You liked the post.", newLike})
+      } catch (error) {
+            console.error(error)
+            res.status(500).json({message: "Error processing like."})
+      }
+}
 
-  // 3. Implement the removeLike Function
-      // Function Name: removeLike
-      // Objective: Remove a like from a specific post by the current user.
-      // Steps:
-            // Use Like.findOne() to find the like document for the current user and post.
-            // Return a 404 Not Found error if the like does not exist.
-            // Check if the like.user matches req.user.id.
-            // Return a 403 Forbidden error if the current user is not authorized to remove the like.
-            // Delete the like using like.deleteOne().
-            // Update the post:
-            // Remove the like._id from the post.likes array using the filter method.
-            // Save the updated post using post.save().
-            // Respond with a success message.
+exports.removeLike = async (req, res) => {
+      try {
+            const like = await Like.findOne({
+                  user: req.user.id,
+                  post: req.params.id
+            })
+            if (!like) {
+                  console.error("404 - No such like.")
+                  return res.status(404).json({message: "No such like."})
+            }
+            if (like.user != req.user.id) {
+                  console.error("403 - User not approved.")
+                  return res.status(403).json({message: "User not approved."})
+            }
+            await Like.deleteOne({
+                  user: req.user.id,
+                  post: req.params.id
+            })
+            const post = await Post.findById(req.params.id)
+            post.likes = post.likes.filter((k) => k._id != like._id)
+            await post.save()
+            return res.status(200).json({message: "Like removed."})
+      } catch (error) {
+            console.error(error)
+            res.status(500).json({message: "Error removing like."})
+      }
+}
 
-  // 4. Implement the getLikesByPost Function
-      // Function Name: getLikesByPost
-      // Objective: Fetch all likes for a specific post.
-      // Steps:
-            // Use Like.find() to retrieve all likes where the post matches req.params.id.
-            // Use populate() to include the user's name and email fields in the result.
-            // Respond with the retrieved likes in JSON format.
-
-  // 5. Error Handling
-      // Objective: Ensure robust error handling for each function.
-      // Steps:
-            // Wrap the logic of each function in a try...catch block.
-            // Log any errors to the console for debugging.
-            // Respond with a 500 Internal Server Error status and a descriptive error message in case of failure.
+exports.getLikesByPost = async (req, res) => {
+      try {
+            const likes = await Like.find({post: req.params.id})
+                  .populate("user")
+            return res.status(200).json(likes)
+      } catch (error) {
+            console.error(error)
+            res.status(500).json({message: "Error retrieving likes"})
+      }
+}

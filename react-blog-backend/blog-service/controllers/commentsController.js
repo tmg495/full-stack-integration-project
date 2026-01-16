@@ -30,7 +30,7 @@ exports.addComment = async (req, res) => {
     try {
         const { content } = req.body
         const post = await Post.findById(req.params.id)
-        console.log(content)
+        
         const comment = new Comment({
             content: content,
             author: req.user.id,
