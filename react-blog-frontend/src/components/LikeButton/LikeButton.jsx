@@ -16,49 +16,109 @@ function LikeButton({ postId, isDarkMode }) {
     const fetchLikes = async () => {
       setIsLiked(false);
       setLikes(0);
-      // TODO
-            // Update the Function:
-                    // Update the function fetchLikes within the useEffect hook.
-            // Access Authentication Token:
-                    // Retrieve the auth_user object from localStorage and parse it.
-                    // Extract the token. If the token is missing, alert the user and stop execution.
-            // Fetch Likes from the API:
-                    // Use the fetch API to send a GET request to the endpoint:
-                    // ${import.meta.env.VITE_API_URL}/api/likes/${postId}.
-                    // Include the Authorization header with the token for user authentication.
-            // Handle API Response:
-                    // Check if the response is successful (response.ok).
-                    // Parse the response as JSON to extract the likes data.
-            // Update State:
-                    // Use the length of the likes data array to update the likes state.
-                    // Determine if the current user has liked the post by checking if their user ID exists in the likes data. Update the isLiked state accordingly.
-            // Handle Errors:
-                    // Use a try...catch block to catch and log any errors. Alert the user in case of an error.
+      try {
+        const userInfo = localStorage.getItem("auth_user")
+        const { token, id: currentUserId } = JSON.parse(userInfo)
+
+        if (!token) {
+          alert("Authentication token not found. Please log in.");
+          return;
+        }
+
+        const response = await fetch(
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/likes/${postId}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`, // Include token in Authorization header
+            }
+          }
+        );
+        if (!response.ok) {
+            console.error("Error retrieving likes.")
+            return
+        }
+
+        const parsedResponse = await response.json()
+        const numLikes = parsedResponse.length
+        setLikes(numLikes)
+
+        parsedResponse.forEach((c) => {
+          if (c.user == currentUserId) {
+            setIsLiked(true)
+          }
+        })
+
+      } catch (error) {
+        console.error(error)
+        resizeBy.status(500).json({message: "Unknown like button retrieval error"})
+      }
+      
     };
 
     fetchLikes(); //Call the fetchLikes function to execute
   }, [postId]); // Run this effect whenever the postId changes
 
   const handleLikeClick = async () => {
-            // Update the Function:
-                    // Update the function handleLikeClick.
-            // Access Authentication Token:
-                    // Retrieve the auth_user object from localStorage and parse it.
-                    // Extract the token. If the token is missing, alert the user and stop execution.
-            // Determine HTTP Method:
-                    // Use POST if the user has not liked the post yet.
-                    // Use DELETE if the user is undoing a like.
-            // Construct API URL:
-                    // Use the endpoint: ${import.meta.env.VITE_API_URL}/api/likes/${postId}.
-            // Send API Request:
-                    // Use the fetch API to send the request.
-                    // Include the Authorization header with the token for user authentication.
-                    // Check if the response is successful. If not, parse the error response and throw an error with a meaningful message.
-            // Update Like Count:
-                    // Fetch the updated like count by calling the same API endpoint as in fetchLikes.
-                    // Update the likes and isLiked states based on the response.
-            // Handle Errors:
-                    // Use a try...catch block to log and alert the user in case of an error.
+    try {
+      const userInfo = localStorage.getItem("auth_user")
+      const { token, id: currentUserId } = JSON.parse(userInfo)
+
+      if (!token) {
+        alert("Authentication token not found. Please log in.");
+        return;
+      }
+
+      let clickMethod = "POST" 
+      if(isLiked) {
+        clickMethod = "DELETE"
+      }
+
+      let response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/likes/${postId}`,
+        {
+          method: clickMethod,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          }
+        }
+      );
+
+      if (!response.ok) {
+        console.error(`Like button ${clickMethod} error`)
+      }
+
+      response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/likes/${postId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          }
+        }
+      );
+      if (!response.ok) {
+          console.error("Error retrieving likes.")
+          return
+      }
+
+      const parsedResponse = await response.json()
+      const numLikes = parsedResponse.length
+      setLikes(numLikes)
+      setIsLiked(!isLiked)
+    } catch(error) {
+      console.error(error)
+      res.status(500).json({message: "Unknown like button click error"})
+    }
     
   };
 
