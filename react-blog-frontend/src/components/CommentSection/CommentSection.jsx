@@ -16,14 +16,32 @@ function CommentSection({ postId }) {
   useEffect(() => {
     // Define an asynchronous function to fetch comments from the API.  Asynchronous functions allow you to work with promises and await their resolution.  This makes asynchronous code easier to read and reason about.
     const fetchComments = async () => {
-      // TODO
-                // Access the authentication token from localStorage. If the token does not exist, alert the user and halt further execution.
-                // Use the postId to construct the API URL. This URL should point to the endpoint responsible for fetching comments.
-                // Make a GET request to the API with the token included in the Authorization header.
-                // Parse the response data and update the component's comments state with the fetched data.
-                // Handle any errors during the request gracefully, logging them for debugging purposes.
+      try {
+        const userInfo = localStorage.getItem("auth_user")
+        const { token, currentUserId } = JSON.parse(userInfo)
+        if (!token) {
+          alert("Authentication token not found. Please log in.");
+          return;
+        }
 
-      setComments([]);
+        const response = await fetch(
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/comments/${postId}`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`, // Include token in Authorization header
+            },
+          }
+        );
+
+        const parsedResponse = await response.json()
+
+        setComments(parsedResponse);
+      } catch (error) {
+        console.error(error)
+      }
     };
 
     // Call the fetchComments function to initiate the comment fetching process.
@@ -33,14 +51,39 @@ function CommentSection({ postId }) {
 
   // Function to handle adding a new comment
   const handleAddComment = async (e) => {
-  //  TODO
-          // Access the authentication token and the user ID from localStorage. If the token is missing, notify the user to log in.
-          // Construct the API endpoint using the postId.
-          // Use a POST request to send the new comment content to the server. Ensure the content is properly formatted in JSON.
-          // If the API call is successful, add the new comment to the comments state.
-          // Clear the input field after successfully adding the comment.
-          // Handle any errors gracefully, displaying user-friendly error messages.
+    try {
+      e.preventDefault()
+      const userInfo = localStorage.getItem("auth_user")
+      const { token, currentUserId } = JSON.parse(userInfo)
+      if (!token) {
+        alert("Authentication token not found. Please log in.");
+        return;
+      }
 
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/comments/${postId}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          },
+          body: JSON.stringify({
+            content: newComment,
+            author: currentUserId
+          })
+        }
+      );
+
+      const parsedResponse = await response.json()
+      setComments([...comments, parsedResponse]);
+
+      setNewComment('')
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   // Function to handle editing an existing comment
@@ -53,14 +96,50 @@ function CommentSection({ postId }) {
 
   // Function to handle updating an existing comment
   const handleUpdateComment = async (e) => {
-    // TODO
-          // Retrieve the authentication token from localStorage. If the token is missing, alert the user.
-          // Use the editComment state to get the comment's ID and construct the API URL for the specific comment.
-          // Send a PUT request to the API with the updated comment content in the body.
-          // If successful, update the corresponding comment in the comments state to reflect the changes.
-          // Clear the edit mode by resetting the editComment and newComment states.
-          // Ensure error handling is robust, with clear messages for the user in case of failure.
+    try {
+      e.preventDefault()
+      const userInfo = localStorage.getItem("auth_user")
+      const { token, currentUserId } = JSON.parse(userInfo)
 
+      if (!token) {
+        alert("Authentication token not found. Please log in.");
+        return;
+      }
+      
+      const commentId = editComment._id
+
+      const response = await fetch(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/comments/${commentId}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Include token in Authorization header
+          },
+          body: JSON.stringify({
+            content: newComment,
+            author: currentUserId
+          })
+        }
+      );
+      const parsedResponse = await response.json()
+      const newCommentArray = comments.map((c) => {
+        if (c._id == commentId) {
+          return parsedResponse
+        } else {
+          return c
+        }
+      })
+
+      setComments(newCommentArray)
+      setEditComment(null)
+      setNewComment("")
+
+    } catch (error) {
+      console.error(error)
+    }
   };
 
   // Function to handle deleting a comment

@@ -19,7 +19,7 @@ router.get("/:id", protect, getPostById); // GET /api/posts/:id
 // Create a new post
 router.post("/", protect, createPost); // POST /api/posts
 
-router.patch("/:id", protect, updatePost);
+router.put("/:id", protect, updatePost);
 
 router.delete("/:id", protect, deletePost)
 
