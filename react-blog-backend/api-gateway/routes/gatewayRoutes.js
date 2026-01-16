@@ -125,8 +125,35 @@ router.use("/posts", protect, async (req, res) => {
   }
 });
 
-// TODO
-// Implement /comments route to handle comment functionality
+router.use("/comments/:id", protect, async (req, res) => {
+  const { method, body, headers, originalUrl } = req;
+  console.log("Body:", body);
+  const url = `${BLOG_SERVICE_URL}${originalUrl}`;
+  try {
+    // Log the request being forwarded
+    logger.info(`Forwarding ${method} request to Blog Service: ${url}`);
+    const response = await axios({
+      method, // HTTP method (GET, POST, PUT, DELETE, etc.)
+      url, // Constructed URL for the Blog Service
+      data: body, // Request body data
+      headers: { Authorization: headers.authorization }, // Forward the Authorization header for authentication
+    });
+    // Send the Blog Service's response back to the client
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    // Log and handle errors during forwarding
+    // console.log(error);
+    logger.error(
+      `Error forwarding ${method} request to Blog Service: ${url}`,
+      error.message
+    );
+    res.status(error.response?.status || 500).json({
+      // Use optional chaining for error status
+      message: "Error forwarding request to Blog Service",
+      error: error.message,
+    });
+  }
+})
 
 // TODO
 // Implement /likes route to handle comment functionality
