@@ -46,7 +46,7 @@ function BlogPost({
         return;
       }
   
-      if (author != currentUserId){
+      if (author._id != currentUserId){
         alert("You are restricted to delete this post, as you are not the owner.")
         return;
       }
@@ -220,7 +220,7 @@ BlogPost.propTypes = {
   id: PropTypes.number.isRequired, //id is required and must be a number
   title: PropTypes.string.isRequired, // title is required and must be a string
   content: PropTypes.string.isRequired, // content is required and must be a string
-  author: PropTypes.string.isRequired, //author is required and must be a string
+  author: PropTypes.object.isRequired, //author is required and must be an object
   date: PropTypes.string.isRequired, //date is required and must be a string
   image: PropTypes.string, //image is optional and can be a string
   isDarkMode: PropTypes.bool.isRequired, //isDarkMode is required and must be a boolean

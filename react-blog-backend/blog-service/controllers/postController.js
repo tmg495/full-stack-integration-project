@@ -1,5 +1,6 @@
 const Post = require("../models/Posts");
 const Tag = require("../models/Tags");
+const User = require("../models/User")
 const Category = require("../models/Category");
 const Comment = require("../models/Comments");
 const Like = require("../models/Like");

@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema(
     categories: [{ type: mongoose.Schema.Types.ObjectId, ref: "Category" }], // Associated categories
     likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "Like" }], // Associated likes
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }], // Associated comments
-    author: { type: mongoose.Schema.Types.ObjectId, required: true } // Only store userId
+    author: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" } // Only store userId
   },
   { timestamps: true } // Automatically adds `createdAt` and `updatedAt` fields
 );

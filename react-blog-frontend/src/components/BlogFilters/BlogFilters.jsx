@@ -79,7 +79,7 @@ const BlogFilters = memo(function BlogFilters({
 
       // After fetching all posts, extract unique authors, categories, and tags.
 
-      const uniqueAuthors = [...new Set(allPosts.map((post) => post.author))]; //Use a Set to ensure uniqueness, then convert back to an array
+      const uniqueAuthors = [...new Set(allPosts.map((post) => post.author.name))]; //Use a Set to ensure uniqueness, then convert back to an array
       const uniqueCategories = [
         ...new Set(allPosts.flatMap((post) => post.categories)), //flatMap flattens nested arrays into a single array while mapping
       ];

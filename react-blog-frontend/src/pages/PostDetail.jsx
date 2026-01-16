@@ -70,7 +70,7 @@ function PostDetail() {
             id={post.id} // Pass the post ID
             title={post.title} // Pass the post title
             content={post.content} // Pass the post content
-            author={post.author} // Pass the post author
+            author={post.author.name} // Pass the post author
             date={post.date} // Pass the post date
             image={post.image} // Pass the post image
             isDarkMode={false} // Set isDarkMode to false

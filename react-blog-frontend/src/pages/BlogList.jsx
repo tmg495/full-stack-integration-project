@@ -66,7 +66,7 @@ function Bloglist() {
           content: post.content,
           tags: post.tags.map((tag) => tag.name), // Extract tag names
           categories: post.categories.map((category) => category.name), // Extract category names
-          author: post.author,
+          author: post.author.name,
           date: new Date(post.createdAt).toLocaleDateString(), // Format date string
           likes: post.likes.length,
           comments: post.comments.length,
